@@ -1,0 +1,33 @@
+body {
+    font-family: Big Shoulders Inline;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 209, 71);
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+
+a:link{
+
+    text-decoration: none;
+}
+a:hover {
+    color: aqua;
+    text-decoration: double;
+    font-weight: bold;
+}
+a:visited {
+    color: rgb(71, 83, 255);
+    text-decoration: wavy;
+}
+
+p {
+    text-align: justify;
+    text-decoration: solid;
+}
+
+.kalimatpembuka {
+    font-size: x-large;
+    border: chocolate 2px solid;
+    border-radius: 50px;
+}

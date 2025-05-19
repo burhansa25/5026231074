@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Coba;
+use App\Http\Controllers\MyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +40,17 @@ Route::get('hello', [Coba::class, 'helloword']);
 
 // Versi lama
 // Route::get('hello', App\Http\Controllers\Coba::helloworld);
+
+// TUGAS
+Route::get('frontend', function () {
+	return view('frontend');
+});
+
+Route::get('tugas1', [MyController::class, 'alchemist1']);
+Route::get('tugas2bootstrap', [MyController::class, 'alchemist2']);
+Route::get('tugas3bootstrap', [MyController::class, 'alchemist3']);
+Route::get('tugas4layouting', [MyController::class, 'alchemist4']);
+Route::get('tugas5js', [MyController::class, 'alchemist5']);
+Route::get('tugas6js', [MyController::class, 'alchemist6']);
+Route::get('tugas7linktree', [MyController::class, 'alchemist7']);
+Route::get('tugasets', [MyController::class, 'alchemist8']);
