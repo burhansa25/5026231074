@@ -44,6 +44,6 @@ class MyController extends Controller
 
     public function alchemist8()
     {
-        return view('index');
+        return view('ets');
     }
 }
