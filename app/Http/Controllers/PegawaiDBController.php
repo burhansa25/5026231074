@@ -110,4 +110,100 @@ class PegawaiDBController extends Controller
 		return view('index',['pegawai' => $pegawai]);
 
 	}
+
+
+    public function index2()
+	{
+		$kue = DB::table('kue')->paginate(10);
+		return view('index2',['kue' => $kue]);
+
+	}
+
+	// method untuk menampilkan view form tambah kue
+	public function tambahKue()
+	{
+
+		// memanggil view tambah
+		return view('tambahKue');
+
+	}
+
+	// method untuk insert data ke table kue
+	public function storeKue(Request $request)
+	{
+		// insert data ke table kue
+		DB::table('kue')->insert([
+			'merkkue' => $request->merkkue,
+			'hargakue' => $request->hargakue,
+			'tersedia' => $request->tersedia,
+			'berat' => $request->berat
+		]);
+		// alihkan halaman ke halaman kue
+		return redirect('/kue');
+
+	}
+
+    // public function proses(Request $request)
+    // {
+    //     $this->validate($request,[
+    //        'nama' => 'required|min:5|max:20',
+    //        'jabatan' => 'required',
+    //        'umur' => 'required|numeric',
+    //        'alamat' => 'required'
+    //     ]);
+
+    //     return view('proses',['data' => $request]);
+    // }
+
+	// method untuk edit data kue
+	public function editKue($ID)
+	{
+		// mengambil data kue berdasarkan id yang dipilih
+		$kue = DB::table('kue')
+            ->where('id',$ID)
+            ->get();
+
+		// passing data kue yang didapat ke view edit.blade.php
+		return view('editKue',['kue' => $kue]);
+
+	}
+
+	// update data kue
+	public function updateKue(Request $request)
+	{
+		// update data kue
+		DB::table('kue')->where('id',$request->id)->update([
+			'merkkue' => $request->merkkue,
+			'hargakue' => $request->hargakue,
+			'tersedia' => $request->tersedia,
+            'berat' => $request->berat
+		]);
+		// alihkan halaman ke halaman kue
+		return redirect('/kue');
+	}
+
+	// method untuk hapus data pegawai
+	public function hapusKue($ID)
+	{
+		// menghapus data kue berdasarkan id yang dipilih
+		DB::table('kue')->where('ID',$ID)->delete();
+
+		// alihkan halaman ke halaman kue
+		return redirect('/kue');
+	}
+
+    public function cariKue(Request $request)
+	{
+		// menangkap data pencarian
+		$cariKue = $request->cariKue;
+
+    		// mengambil data dari table kue sesuai pencarian data
+		$kue = DB::table('kue')
+		->where('merkkue','like',"%".$cariKue."%")
+		->paginate();
+
+    		// mengirim data kue ke view index
+		return view('index2',['kue' => $kue]);
+
+	}
 }

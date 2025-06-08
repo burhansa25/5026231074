@@ -84,3 +84,16 @@ Route::get('/pegawai/hapus/{id}', [PegawaiDBController::class, 'hapus']);
 
 // pertemuan 14 (pencarian, filter, pagination)
 Route::get('/pegawai/cari',[PegawaiDBController::class,'cari']);
+
+// Tugas CRUD: Kue
+//route CRUD
+Route::get('/kue', [PegawaiDBController::class, 'index2']);
+//route CRUD
+Route::get('/kue/tambahKue/', [PegawaiDBController::class, 'tambahKue']);
+Route::post('/kue/storeKue', [PegawaiDBController::class, 'storeKue']);
+Route::get('/kue/editKue/{ID}', [PegawaiDBController::class, 'editKue']);
+Route::post('/kue/updateKue', [PegawaiDBController::class, 'updateKue']);
+Route::get('/kue/hapusKue/{ID}', [PegawaiDBController::class, 'hapusKue']);
+
+// pertemuan 14 (pencarian, filter, pagination)
+Route::get('/kue/cariKue',[PegawaiDBController::class,'cariKue']);
