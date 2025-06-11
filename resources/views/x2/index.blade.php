@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<h3>Data Karyawan</h3>
+	<h3>Data Karyawan </h3>
 
     {{-- @if(session('sukses'))  --}}
 	<br/>

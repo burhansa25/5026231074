@@ -8,7 +8,7 @@
 	<h2><a href="https://www.malasngoding.com">www.malasngoding.com</a></h2>
 	<h3>Edit Karyawan</h3>
 
-	<a href="/karyawan"> Kembali</a>
+	<a href="/karyawan">< Kembali</a>
 
 	<br/>
 	<br/>

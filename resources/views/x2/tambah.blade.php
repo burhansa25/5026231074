@@ -4,7 +4,7 @@
 
 	<h3>Data Karyawan</h3>
 
-	<a href="/karyawan" class="btn btn-info"> Kembali</a>
+	<a href="/karyawan" class="btn btn-info">< Kembali</a>
 
 	<br/>
 	<br/>
