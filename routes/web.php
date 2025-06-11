@@ -97,3 +97,32 @@ Route::get('/kue/hapusKue/{ID}', [PegawaiDBController::class, 'hapusKue']);
 
 // pertemuan 14 (pencarian, filter, pagination)
 Route::get('/kue/cariKue',[PegawaiDBController::class,'cariKue']);
+
+
+// Latihan 1: Soal X2 Karyawan
+//route CRUD
+Route::get('/karyawan', [PegawaiDBController::class, 'indexX2']);
+//route CRUD
+Route::get('/karyawan/tambahKaryawan/', [PegawaiDBController::class, 'tambahKaryawan']);
+Route::post('/karyawan/storeKaryawan', [PegawaiDBController::class, 'storeKaryawan']);
+Route::get('/karyawan/editKaryawan/{ID}', [PegawaiDBController::class, 'editKaryawan']);
+Route::post('/karyawan/updateKaryawan', [PegawaiDBController::class, 'updateKaryawan']);
+Route::get('/karyawan/hapusKaryawan/{ID}', [PegawaiDBController::class, 'hapusKaryawan']);
+
+Route::get('/karyawan/cariKaryawan',[PegawaiDBController::class,'cariKaryawan']);
+
+// Latihan 2: Soal D4 Keranjang Belanja
+//route CRUD
+Route::get('/keranjangbelanja', [PegawaiDBController::class, 'indexD4']);
+//route CRUD
+Route::get('/keranjangbelanja/tambahBarang/', [PegawaiDBController::class, 'tambahBarang']);
+Route::post('/keranjangbelanja/storeBarang', [PegawaiDBController::class, 'storeBarang']);
+Route::get('/keranjangbelanja/editBarang/{ID}', [PegawaiDBController::class, 'editBarang']);
+Route::post('/keranjangbelanja/updateBarang', [PegawaiDBController::class, 'updateBarang']);
+Route::get('/keranjangbelanja/hapusBarang/{ID}', [PegawaiDBController::class, 'hapusBarang']);
+
+Route::get('/keranjangbelanja/cariBarang',[PegawaiDBController::class,'cariBarang']);
+
+// Latihan 3: Soal A1 Page Counter
+//route CRUD
+Route::get('/pagecounter', [PegawaiDBController::class, 'indexA1']);
