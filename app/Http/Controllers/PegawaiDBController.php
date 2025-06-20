@@ -19,7 +19,7 @@ class PegawaiDBController extends Controller
         // dd($pegawai); // untuk melihat data pegawai dalam format yang lebih mudah dibaca
 
     	// mengirim data pegawai ke view index
-		return view('index',['pegawai' => $pegawai]);
+		return view('indexp',['pegawai' => $pegawai]);
 
 	}
 

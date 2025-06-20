@@ -6,6 +6,8 @@ use App\Http\Controllers\MyController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\LatihanController;
+use App\Http\Controllers\EASController;
 
 
 /*
@@ -126,3 +128,15 @@ Route::get('/keranjangbelanja/cariBarang',[PegawaiDBController::class,'cariBaran
 // Latihan 3: Soal A1 Page Counter
 //route CRUD
 Route::get('/pagecounter', [PegawaiDBController::class, 'indexA1']);
+
+// Latihan Awan: Soal Second Page Counter
+//route CRUD
+Route::get('/secondPC', [LatihanController::class, 'indexPage']);
+
+Route::get('/secondPC/page1', [LatihanController::class, 'show']);
+
+// EAS 2025
+Route::get('/eas', [EASController::class, 'index']);
+//route CRUD
+Route::get('/eas/tambahdata/', [EASController::class, 'tambahData']);
+Route::post('/eas/storedata/', [EASController::class, 'storeData']);

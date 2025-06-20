@@ -2,41 +2,47 @@
 
 @section('content')
 
-	<h3>Data Pegawai</h3>
+	<h3>Data Nilai Mahasiswa</h3>
 
-	<a href="/pegawai/tambah" class="btn btn-primary"> + Tambah Pegawai Baru</a>
-
-	<p>Cari Data Pegawai :</p>
-	<form action="/pegawai/cari" method="GET">
-		<input type="text" class="form-control" name="cari" placeholder="Cari Pegawai ..">
-		<input type="submit" value="CARI" class="btn btn-info">
-	</form>
     {{-- @if(session('sukses'))  --}}
 	<br/>
 
+    <a href="/eas/tambahdata" class="btn btn-primary"> + Tambah Data</a>
+
+    <br/>
+
+    <hr>
+
 	<table class="table table-striped table-hover">
-		<tr>
-			<th>Nama</th>
-			<th>Jabatan</th>
-			<th>Umur</th>
-			<th>Alamat</th>
-			<th>Opsi</th>
+		<tr style="text-align: center">
+            <th>ID</th>
+            <th>NRP</th>
+			<th>Nilai Angka</th>
+			<th>SKS</th>
+            <th>Nilai Huruf</th>
+			<th>Bobot</th>
 		</tr>
-		@foreach($pegawai as $p)
-		<tr>
-			<td>{{ $p->pegawai_nama }}</td>
-			<td>{{ $p->pegawai_jabatan }}</td>
-			<td>{{ $p->pegawai_umur }}</td>
-			<td>{{ $p->pegawai_alamat }}</td>
+		@foreach($nilai as $n)
+		<tr style="text-align: center">
+            <td>{{ $n->id }}</td>
+			<td>{{ $n->nomorinduksiswa }}</td>
+			<td>{{ $n->nilaiangka }}</td>
+			<td>{{ $n->sks }}</td>
 			<td>
-				<a href="/pegawai/edit/{{ $p->pegawai_id }}" class="btn btn-success">Edit</a>
-				|
-				<a href="/pegawai/hapus/{{ $p->pegawai_id }}" class="btn btn-danger">Hapus</a>
-			</td>
+                @if($n->nilaiangka >= 81)
+                    A
+                @elseif($n->nilaiangka >= 61 && $n->nilaiangka <= 80)
+                    B
+                @elseif($n->nilaiangka >= 41 && $n->nilaiangka <= 60)
+                    C
+                @elseif($n->nilaiangka <= 40)
+                    D
+                @endif
+            </td>
+            <td>{{ number_format($n->nilaiangka * $n->sks) }}</td>
 		</tr>
 		@endforeach
 	</table>
-    {{ $pegawai->links() }}
     <br/>
 
 @endsection
